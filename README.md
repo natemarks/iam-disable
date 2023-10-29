@@ -43,7 +43,9 @@ Review the report file. Edit the targets file to remove any users you do not wan
 
 
 ### Disable IAM users
-To disable IAM users, edit the targets list to include only the users you want to disable.  Then run the tool with the targets file as the only argument:
+To disable IAM users, edit the targets list to include only the users you want to disable.  Then run the tool with the targets file as the only argument.
+
+NOTE: you'll be prompted to enter 4 random characters to confirm the disable operation.  This is to prevent accidental execution of the tool.
 ```
 ./build/current/linux/amd64/iam-disable 0123456789_targets.txt
 ```

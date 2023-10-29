@@ -29,6 +29,7 @@ func Discover(config user.Config, log *zerolog.Logger) {
 
 func Disable(config user.Config, log *zerolog.Logger) {
 	targets, err := file.TargetsFromFile(config.TargetsFile)
+	user.ConfirmDisable(targets)
 	if err != nil {
 		log.Fatal().Err(err).Msgf("error getting targets from file %s", config.TargetsFile)
 	}

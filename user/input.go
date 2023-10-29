@@ -62,7 +62,11 @@ func generateRandomString(length int) string {
 	return string(b)
 }
 
-func ConfirmDisableIAMUser(username string) {
+func ConfirmDisable(targets []string) {
+	warning := "WARNING: This will disable the following IAM users:\n"
+	for _, target := range targets {
+		warning += "    " + target + "\n"
+	}
 	confirmString := generateRandomString(confirmStringLength)
 	fmt.Println("\nType the characters: \"" + confirmString + "\" to continue:\n")
 	reader := bufio.NewReader(os.Stdin)
